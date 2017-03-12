@@ -1,0 +1,200 @@
+<div class="first">
+	<div class="centerTitle name">
+		<h1 class="animated">Harvey</h1>
+	</div>
+	<div class="intro">
+		<p>Intro:</p>
+		<i class="icon"></i>
+		<p>24岁 / 男 / 本科</p>
+		<p>专业：商务英语</p>
+		<p>所在地：深圳</p>
+		<p>2 年工作经验</p>
+	</div>
+	<div class="keywords">
+		<p>Keywords:</p>
+		<i class="icon"></i>
+		<p>学习能力强</p>
+		<p>责任心强</p>
+		<p>待人亲切</p>
+	</div>
+	<div class="contact">
+		<p>Contact:</p>
+		<i class="icon"></i>
+		<p>13725181216</p>
+		<p>1656417255@qq.com</p>
+	</div>
+	<div class="tools">
+		<p>Tools:</p>
+		<i class="icon"></i>
+		<p>svn / git</p>
+		<p>gulp / webpack</p>
+	</div>
+	<div class="front-end">
+		<p>Front-end:</p>
+		<i class="icon"></i>
+		<p>HTML / CSS</p>
+		<p>JS / JQ</p>
+		<p>Vue</p>
+	</div>
+	<div class="back-end">
+		<p>Back-end:</p>
+		<i class="icon"></i>
+		<p>Nodejs</p>
+		<p>MongoDb</p>
+		<p>Linux / Nginx</p>
+	</div>
+</div>
+
+<style type="text/css">
+	/*第一页*/
+	.first {
+		width: 100%;
+		height: 100%;
+		background: #2196f3;
+		padding-top: .25rem;
+		color: #fff;
+		position: relative;
+	}
+	.centerTitle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.name:after {
+		content: "";
+		display: inline-block;
+		width: 1rem;
+		height: 2rem;
+		border: .5px solid grey;
+		position: absolute;
+		top: -.8rem;
+		left: -.15rem;
+		border-radius: 50%;
+		opacity: 0;
+		animation: circle-comeIn 1.5s .4s forwards;
+		z-index: -1;
+	}
+	.centerTitle h1 {
+		font-size: .22rem;
+		font-weight: 500;
+	}
+	.icon {
+		width: .2rem;
+    height: .18rem;
+    display: inline-block;
+    position: absolute;
+    background-image: url(img/icons.png);
+    background-repeat: no-repeat;
+    background-position: -22px -111px;
+    vertical-align: middle;
+    background-size: 180px;
+    top: .02rem;
+    left: 0;
+	}
+	.keywords .icon {
+		background-position: -61px -225px;
+	}
+	.contact .icon {
+    background-position: -120px -65px;
+	}
+	.tools .icon {
+    background-position: -82px -86px;
+	}
+	.front-end .icon {
+    background-position: -62px -186px;
+	}
+	.back-end .icon {
+    background-position: -62px -205px;
+	}
+	.intro {
+		position: absolute;
+		top: .3rem;
+		left: .5rem;
+	}
+	.intro p:first-child,
+	.keywords p:first-child,
+	.contact p:first-child,
+	.tools p:first-child,
+	.front-end p:first-child,
+	.back-end p:first-child {
+		text-indent: .25rem;
+	}
+	.keywords {
+		position: absolute;
+		right: .3rem;
+		top: .8rem;
+	}
+	
+	.contact {
+		position: absolute;
+		left: .2rem;
+		top: 1.85rem;
+	}
+	.tools {
+		position: absolute;
+		right: .1rem;
+		top: 2.4rem;
+	}
+	.front-end {
+		position: absolute;
+		left: .2rem;
+		bottom: 1.85rem;
+	}
+	.back-end {
+		position: absolute;
+		right: .3rem;
+		bottom: 1.5rem;
+	}
+	
+	.intro {
+		transform: translateX(-2rem);
+		animation: intro-comeIn 1s .7s forwards;
+	}
+	.keywords {
+		transform: translateX(2rem);
+		animation: keywords-comeIn 1s 1.5s forwards;
+	}
+	.contact {
+		transform: translateX(-2rem);
+		animation: intro-comeIn 1s 2.3s forwards;
+	}
+	.tools {
+		transform: translateX(2rem);
+		animation: keywords-comeIn 1s 2.8s forwards;
+	}
+	.front-end {
+		transform: translateX(-2rem);
+		animation: intro-comeIn 1s 3.3s forwards;
+	}
+	.back-end {
+		transform: translateX(2rem);
+		animation: keywords-comeIn 1s 3.9s forwards;
+	}
+	@keyframes intro-comeIn {
+		0% {
+			transform: translateX(-2rem);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+	@keyframes keywords-comeIn {
+		0% {
+			transform: translateX(2rem);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+	@keyframes circle-comeIn {
+		0% {
+			opacity: 0;
+			transform: scale(.5);
+		}
+		100% {
+			opacity: 1;
+			transform: scale(2.2);
+		}
+	}
+</style>
