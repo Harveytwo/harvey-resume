@@ -67,7 +67,7 @@
 						</div>
 						
 						<div class="cover-title">
-							<div class="pic-title">阿肯色州的温泉洞穴</div>
+							<div class="pic-title"></div>
 							<p>封面取于 Bing 的每日一天</p>
 						</div>
 					</div>
@@ -166,6 +166,25 @@
 					$(".flipbook").turn('page', 1); //跳转页数
 				}, function() {});
 			});
+			
+			// 获取 bing 的封面图
+			$(function() {
+				$.ajax({
+					type: 'get',
+					url: 'http://www.nankio.cn/bing-cover/api/bingCover',
+					dataType: 'json',
+					success: function(re) {
+						console.log(re)
+						$('.cover').css({
+							'background-image': 'http://bing.com/' + re.images[0].url
+						})
+						$('.pic-title').text(re.images[0].copyright)
+					},
+					error: function(e) {
+						console.log(e)
+					}
+				})
+			})
 		</script>
 	</body>
 
