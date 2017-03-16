@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/basic.css" />
 		<link rel="stylesheet" type="text/css" href="css/pages.css" />
 		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<link rel="stylesheet" type="text/css" href="css/zepto.fullpage.css"/>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
@@ -83,16 +84,18 @@
 					<div>
 						<!--include "component/fourth.html"-->
 					</div>
+					<div>5</div>
 					<div>6</div>
 					<div>7</div>
 					<div>8</div>
 					<div>9</div>
 					<div>10</div>
 					<div>11</div>
-					<div>12</div>
 				</div>
 			</div>
 		</div>
+		<script src="js/zepto.js"></script>
+		<script src="js/zepto.fullpage.js"></script>
 		<script>
 			//自定义仿iphone弹出层
 			(function($) {
@@ -146,6 +149,7 @@
 
 			//上一页
 			$(".previousPage").bind("touchend", function() {
+				$(".flipbook").turn("disable", false);
 				var pageCount = $(".flipbook").turn("pages"); //总页数
 				var currentPage = $(".flipbook").turn("page"); //当前页
 				if(currentPage >= 2) {
@@ -154,6 +158,7 @@
 			});
 			// 下一页
 			$(".nextPage").bind("touchend", function() {
+				$(".flipbook").turn("disable", false);
 				var pageCount = $(".flipbook").turn("pages"); //总页数
 				var currentPage = $(".flipbook").turn("page"); //当前页
 				if(currentPage <= pageCount) {
@@ -162,6 +167,7 @@
 			});
 			//返回到目录页
 			$(".return").bind("touchend", function() {
+				$(".flipbook").turn("disable", false);
 				$(document).confirm('您确定要返回首页吗?', {}, function() {
 					$(".flipbook").turn('page', 1); //跳转页数
 				}, function() {});

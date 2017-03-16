@@ -2,25 +2,48 @@
 	<div class="centerTitle projects">
 		<h1>Projects</h1>
 	</div>
+	
+	<div class="wp">
+		<div class="wp-inner">
+			<div class="page page1">1
+				<p>好多蚊子飘啊</p>
+			</div>
+			<div class="page page2">2
+				<p>好多蚊子飘啊</p>
+			</div>
+			<div class="page page3">3
+				<p>好多蚊子飘啊</p>
+			</div>
+			<div class="page page4">4
+				<p>好多蚊子飘啊</p>
+				<p>你信不信啊啊</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 <style type="text/css">
 	/*第二页*/
+	
 	.second {
 		width: 100%;
 		height: 100%;
 		background: #009688;
 		position: relative;
 	}
-	.projects {
+	
+	.second .projects {
 		top: 30%;
+		z-index: 200;
 	}
+	
 	.projects h1 {
 		position: absolute;
-		top: 30%;
+		/*top: 30%;*/
 		transform: translateX(-50%);
 		animation: projects 1.5s .6s forwards;
 	}
+	
 	@keyframes projects {
 		0% {
 			transform: translate(-50%, 0);
@@ -28,5 +51,17 @@
 		100% {
 			transform: translate(-50%, 1rem);
 		}
+	}
+	
+	/*上下滑动的样式*/
+	.wp {
+		height: 100%;
+		overflow: hidden;
+		background: #009688;
+		position: absolute;
+		width: 100%;
+	}
+	.wp .page {
+		background: #009688;
 	}
 </style>

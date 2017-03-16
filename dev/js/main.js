@@ -40,26 +40,43 @@ function loading() {
           gradients: true,
           // Auto center this flipbook
           autoCenter: true,
+          acceleration: true,
           when: {
               turning: function (e, page, view) {
-                  if (page == 1) {
-                      $(".btnImg").css("display", "none");
-                      $(".mark").css("display", "block");
-                  } else {
-                      $(".btnImg").css("display", "block");
-                      $(".mark").css("display", "none");
-                  }
-                  if (page == 41) {
-                      $(".nextPage").css("display", "none");
-                  } else {
-                      $(".nextPage").css("display", "block");
-                  }
+              	var total = $(".flipbook").turn("pages");//总页数
+                $('.current').text(page-1)
+                $('.total').text(total-1)
+                if (page == 1) {
+                    $(".btnImg").css("display", "none");
+                } else if(page == 3) {
+                	$(".flipbook").turn("disable", true);
+                	var upPages = $$('.wp-inner .page').length
+                	$$('.wp-inner').fullpage({
+                		start: 0,
+                		afterChange: function(e) {
+                			if(e.cur == (upPages - 1)) {
+                				$(".flipbook").turn("disable", false);
+                			} else {
+                				$(".flipbook").turn("disable", true);
+                			}
+                		}
+                	});
+                	
+                	$$.fn.fullpage.moveTo(0);
+                	
+                } else {
+                  $(".btnImg").css("display", "block");
+                }
+                if (page == 1) {
+                	$('.pagesCount').css("display", "none");
+                  $(".nextPage").css("display", "none");
+                } else {
+                  $(".nextPage").css("display", "block");
+                }
               },
               turned: function (e, page, view) {
                   console.log(page);
-                  var total = $(".flipbook").turn("pages");//总页数
-                  $('.current').text(page-1)
-                  $('.total').text(total)
+                  
                   if (page == 1) {
                 		$('.pagesCount').css("display", "none");
                     $(".return").css("display", "none");
