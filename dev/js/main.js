@@ -48,11 +48,18 @@ function loading() {
                 $('.total').text(total-1)
                 if (page == 1) {
                     $(".btnImg").css("display", "none");
+                    $('.pagesCount').css("display", "none");
+                  	$(".nextPage").css("display", "none");
                 } else if(page == 3) {
+                	setTimeout(function() {
+										$('.wp .page').css({
+											opacity: 1
+										})
+									},300)
                 	$(".flipbook").turn("disable", true);
                 	var upPages = $$('.wp-inner .page').length
                 	$$('.wp-inner').fullpage({
-                		start: 0,
+                		drag: true,
                 		afterChange: function(e) {
                 			if(e.cur == (upPages - 1)) {
                 				$(".flipbook").turn("disable", false);
@@ -66,17 +73,13 @@ function loading() {
                 	
                 } else {
                   $(".btnImg").css("display", "block");
-                }
-                if (page == 1) {
-                	$('.pagesCount').css("display", "none");
-                  $(".nextPage").css("display", "none");
-                } else {
                   $(".nextPage").css("display", "block");
                 }
+                
               },
               turned: function (e, page, view) {
                   console.log(page);
-                  
+
                   if (page == 1) {
                 		$('.pagesCount').css("display", "none");
                     $(".return").css("display", "none");

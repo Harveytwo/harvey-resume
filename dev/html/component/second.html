@@ -1,22 +1,51 @@
 <div class="second">
-	<div class="centerTitle projects">
+	<div class="centerTitle projectsTitle">
 		<h1>Projects</h1>
 	</div>
 	
 	<div class="wp">
 		<div class="wp-inner">
-			<div class="page page1">1
-				<p>好多蚊子飘啊</p>
+			<div class="page page1">
+				<div class="projects project1">
+					<div>
+						瑜秀直播
+					</div>
+				</div>
+				<div class="projects project2">
+					<div>
+						瑜秀直播官网
+					</div>
+				</div>
+				<div class="projects project3">
+					<div>
+						获宝网
+					</div>
+				</div>
+				<div class="projects project4">
+					<div>
+						蜂巢算力 pc 和 mobile
+					</div>
+				</div>
 			</div>
-			<div class="page page2">2
-				<p>好多蚊子飘啊</p>
+			<div class="page page2">
+				<div>
+					瑜秀直播
+				</div>
 			</div>
-			<div class="page page3">3
-				<p>好多蚊子飘啊</p>
+			<div class="page page3">
+				<div>
+					瑜秀直播官网
+				</div>
 			</div>
-			<div class="page page4">4
-				<p>好多蚊子飘啊</p>
-				<p>你信不信啊啊</p>
+			<div class="page page4">
+				<div>
+					获宝网
+				</div>
+			</div>
+			<div class="page page5">
+				<div>
+					蜂巢算力 pc 和 mobile
+				</div>
 			</div>
 		</div>
 	</div>
@@ -24,7 +53,6 @@
 
 <style type="text/css">
 	/*第二页*/
-	
 	.second {
 		width: 100%;
 		height: 100%;
@@ -32,12 +60,12 @@
 		position: relative;
 	}
 	
-	.second .projects {
+	.second .projectsTitle {
 		top: 30%;
 		z-index: 200;
 	}
 	
-	.projects h1 {
+	.projectsTitle h1 {
 		position: absolute;
 		/*top: 30%;*/
 		transform: translateX(-50%);
@@ -63,5 +91,50 @@
 	}
 	.wp .page {
 		background: #009688;
+		opacity: 0;
+	}
+	
+	/*项目样式*/
+	.wp .page .projects {
+		width: 1rem;
+		height: .6rem;
+		background: #aac;
+		position: absolute;
+		opacity: 0;
+		animation: projectsShow 1.5s 1.1s forwards;
+	}
+	.wp .page .project1 {
+		left: .4rem;
+		top: 1.52rem;
+	}
+	.wp .page .project2 {
+		left: 2rem;
+		top: 1.3rem;
+		animation-delay: 1.6s;
+	}
+	.wp .page .project3 {
+		left: .22rem;
+		top: 3.16rem;
+		animation-delay: 2.1s;
+	}
+	.wp .page .project4 {
+		left: 1.95rem;
+		top: 3.52rem;
+		animation-delay: 2.6s;
+	}
+	
+	@keyframes projectsShow {
+		0% {
+			transform: scale(0);
+			opacity: 0;
+		}
+		50% {
+			transform: scale(1.5);
+			opacity: .8;
+		}
+		100% {
+			transform: scale(1);
+			opacity: 1;
+		}
 	}
 </style>

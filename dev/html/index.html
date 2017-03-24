@@ -164,6 +164,8 @@
 				if(currentPage <= pageCount) {
 					$(".flipbook").turn('page', currentPage + 1);
 				} else {}
+				
+				
 			});
 			//返回到目录页
 			$(".return").bind("touchend", function() {
@@ -174,23 +176,23 @@
 			});
 			
 			// 获取 bing 的封面图
-			$(function() {
-				$.ajax({
-					type: 'get',
-					url: 'http://www.nankio.cn/bing-cover/api/bingCover',
-					dataType: 'json',
-					success: function(re) {
-						console.log(re)
-						$('.cover').css({
-							'background-image': 'http://bing.com/' + re.images[0].url
-						})
-						$('.pic-title').text(re.images[0].copyright)
-					},
-					error: function(e) {
-						console.log(e)
-					}
-				})
-			})
+//			$(function() {
+//				$.ajax({
+//					type: 'get',
+//					url: 'http://www.nankio.cn/bing-cover/api/bingCover',
+//					dataType: 'json',
+//					success: function(re) {
+//						console.log(re)
+//						$('.cover').css({
+//							'background-image': 'http://bing.com/' + re.images[0].url
+//						})
+//						$('.pic-title').text(re.images[0].copyright)
+//					},
+//					error: function(e) {
+//						console.log(e)
+//					}
+//				})
+//			})
 		</script>
 	</body>
 
