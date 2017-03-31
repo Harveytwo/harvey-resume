@@ -62,9 +62,11 @@ function loading() {
                 		drag: true,
                 		afterChange: function(e) {
                 			if(e.cur == (upPages - 1)) {
+                				$('.next').hide()
                 				$(".flipbook").turn("disable", false);
                 			} else {
                 				$(".flipbook").turn("disable", true);
+                				$('.next').show()
                 			}
                 		}
                 	});
